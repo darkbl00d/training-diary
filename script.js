@@ -29,7 +29,6 @@ const inputReset = document.querySelector(".reset-btn");
 function eror() {
   alert("Вы не разрешили Доступ к Геопозиции");
 }
-
 // function success(position) {
 //   alert("Доступ разрешён");
 
@@ -163,7 +162,6 @@ class App {
     const { latitude } = position.coords;
     const { longitude } = position.coords;
     const cords = [latitude, longitude];
-    console.log(position);
     this.#map = L.map("map").setView(cords, 15);
 
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -181,7 +179,6 @@ class App {
   }
   // Открытие формы
   _showForm(mapE) {
-    console.log(mapE);
     this.#mapEvents = mapE;
     this.#mapCords = mapE.latlng;
     form.classList.remove("hidden");
@@ -329,4 +326,3 @@ class App {
 }
 
 const vlad = new App();
-console.log(inputReset);
